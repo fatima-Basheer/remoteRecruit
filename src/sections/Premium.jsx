@@ -25,6 +25,7 @@ function Premium() {
           trigger: sectionRef.current,
           start: "top 85%",
           once: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -55,10 +56,20 @@ function Premium() {
           },
           "-=1",
         );
+
+      const handleResize = () => {
+        ScrollTrigger.refresh(true);
+        gsap.set(".gsap-payment-card", { clearProps: "transform" });
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
     },
     { scope: sectionRef },
   );
-
   return (
     <section
       ref={sectionRef}

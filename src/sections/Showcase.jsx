@@ -25,6 +25,7 @@ function Showcase() {
           trigger: sectionRef.current,
           start: "top 85%",
           once: true,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -48,7 +49,7 @@ function Showcase() {
         .from(
           ".gsap-feedback-card",
           {
-            xPercent: 22,
+            x: 50,
             opacity: 0,
             duration: 1,
             ease: "power2.out",
@@ -67,6 +68,17 @@ function Showcase() {
           },
           "-=0.8",
         );
+
+      const onResize = () => {
+        ScrollTrigger.refresh(true);
+        gsap.set(".gsap-feedback-card", { clearProps: "transform" });
+      };
+
+      window.addEventListener("resize", onResize);
+
+      return () => {
+        window.removeEventListener("resize", onResize);
+      };
     },
     { scope: sectionRef },
   );
