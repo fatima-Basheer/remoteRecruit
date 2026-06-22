@@ -40,7 +40,13 @@ function HeroSection() {
     >
       <nav className="nav-anim relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between opacity-100">
         <div className="text-white font-bold text-2xl tracking-wider cursor-pointer flex-shrink-0">
-          <img src="./Logo.png" alt="Logo" className="h-7 sm:h-10 w-auto" />
+          <img
+            src="./Logo.png"
+            alt="Logo"
+            loading="lazy"
+            decoding="async"
+            className="h-7 sm:h-10 w-auto"
+          />
         </div>
 
         <div className="flex gap-2 sm:gap-4">

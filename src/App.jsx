@@ -1,19 +1,15 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
 import "./App.css";
 import HeroSection from "./sections/HeroSection";
-import GlobalReach from "./sections/GlobalReach";
-import Premium from "./sections/Premium";
-import Showcase from "./sections/Showcase";
-import HelpInClicks from "./sections/HelpInClicks";
-import Questions from "./sections/Questions";
-import Footer from "./sections/Footer";
+const GlobalReach = lazy(() => import("./sections/GlobalReach"));
+const Premium = lazy(() => import("./sections/Premium"));
+const Showcase = lazy(() => import("./sections/Showcase"));
+const HelpInClicks = lazy(() => import("./sections/HelpInClicks"));
+const Questions = lazy(() => import("./sections/Questions"));
+const Footer = lazy(() => import("./sections/Footer"));
 
 function App() {
-  const [count, setCount] = useState(0);
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
@@ -26,28 +22,25 @@ function App() {
     };
 
     window.addEventListener("scroll", handleScrollVisibility);
-
-    return () => {
-      window.removeEventListener("scroll", handleScrollVisibility);
-    };
+    return () => window.removeEventListener("scroll", handleScrollVisibility);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <>
       <HeroSection />
-      <GlobalReach />
-      <Premium />
-      <Showcase />
-      <HelpInClicks />
-      <Questions />
-      <Footer />
+
+      <Suspense fallback={<div className="min-h-screen bg-transparent" />}>
+        <GlobalReach />
+        <Premium />
+        <Showcase />
+        <HelpInClicks />
+        <Questions />
+        <Footer />
+      </Suspense>
 
       <button
         onClick={scrollToTop}

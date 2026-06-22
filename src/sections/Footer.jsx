@@ -115,6 +115,8 @@ export default function Footer() {
           <img
             src="./Background.png"
             alt="Footer Background"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-top"
           />
         </div>
