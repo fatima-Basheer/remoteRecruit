@@ -113,7 +113,7 @@ export default function Footer() {
       <div className="relative w-full pt-40 md:pt-48 mt-[-100px] md:mt-[-150px] z-0 flex flex-col">
         <div className="absolute inset-0 -z-10">
           <img
-            src="./Background.png"
+            src="./Footer.png"
             alt="Footer Background"
             loading="lazy"
             decoding="async"
