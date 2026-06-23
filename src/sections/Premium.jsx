@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import Button from "../components/Button";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react"; // 1. Import useGSAP
-
+import { useGSAP } from "@gsap/react";
+import { FaCircleCheck } from "react-icons/fa6";
 gsap.registerPlugin(ScrollTrigger);
 
 function Premium() {
@@ -102,7 +102,10 @@ function Premium() {
               <div className="space-y-2">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#52B4DA] to-[#1E3E85] flex-shrink-0" />
+                    <div className="w-4 h-4 flex-shrink-0 bg-gradient-to-r from-[#52B4DA] to-[#1E3E85] rounded-full flex items-center justify-center">
+                      <FaCircleCheck className="w-3 h-3 text-white" />
+                    </div>
+
                     <span className="text-sm text-gray-700 font-medium">
                       {feature}
                     </span>

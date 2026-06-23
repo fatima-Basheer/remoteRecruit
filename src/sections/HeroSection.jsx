@@ -16,38 +16,30 @@ function HeroSection() {
         y: -30,
         opacity: 0,
         duration: 1,
-      })
-
-        .from(
-          ".hero-anim",
-          {
-            y: 40,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-          },
-          "-=0.6",
-        );
+      }).from(
+        ".hero-anim",
+        {
+          y: 40,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.2,
+        },
+        "-=0.6",
+      );
     },
     { scope: container },
   );
 
   return (
-    <div
-      ref={container}
-      className="relative min-h-screen bg-cover bg-center flex flex-col justify-between overflow-hidden"
-      style={{ backgroundImage: "url('/Background.svg')" }}
-    >
-      <nav className="nav-anim relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between opacity-100">
-        <div className="text-white font-bold text-2xl tracking-wider cursor-pointer flex-shrink-0">
-          <img
-            src="./Logo.png"
-            alt="Logo"
-            loading="lazy"
-            decoding="async"
-            className="h-7 sm:h-10 w-auto"
-          />
-        </div>
+    <div ref={container} className="relative min-h-screen flex flex-col">
+      <img
+        src="/Background.svg"
+        alt="background"
+        className="absolute top-0 left-0 w-full h-screen object-cover object-center md:h-auto md:object-contain -z-10"
+      />
+
+      <nav className="nav-anim relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <img src="./Logo.png" alt="Logo" className="h-7 sm:h-10 w-auto" />
 
         <div className="flex gap-2 sm:gap-4">
           <Button
@@ -65,12 +57,12 @@ function HeroSection() {
         </div>
       </nav>
 
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 w-full max-w-3xl mx-auto py-12">
-        <h1 className="hero-anim text-2xl sm:text-3xl md:text-[45px] font-bold text-white mb-4 leading-tight tracking-tight">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center max-w-5xl mx-auto px-4 sm:px-6 py-8 md:px-6 md:py-12">
+        <h1 className="hero-anim text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-[1.15]">
           RemoteRecruit's Difference
         </h1>
 
-        <p className="hero-anim text-sm sm:text-[17px] text-gray-200 leading-relaxed max-w-[620px]">
+        <p className="hero-anim max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-200 font-normal leading-relaxed">
           RemoteRecruit is connecting the world with an easy-to-use platform
           that lets full-time, part-time, and freelance workers showcase their
           talents to businesses that need them. With no paywalls, no fees, no
@@ -79,7 +71,7 @@ function HeroSection() {
         </p>
       </main>
 
-      <div className="h-6 sm:h-10 relative z-10 block"></div>
+      <div className="h-6 sm:h-10" />
     </div>
   );
 }

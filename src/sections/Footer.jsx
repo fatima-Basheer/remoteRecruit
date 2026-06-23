@@ -140,6 +140,19 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        <div className="relative w-full mt-10">
+          <div className="w-full h-[1px] shadow-sm bg-white/30 opacity-60" />
+
+          <div className="flex justify-center h-15">
+            <img
+              src="./Group 132.webp"
+              alt="Bottom Decoration"
+              className="h-[100px] w-auto object-contain leading-none"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
     </footer>
   );

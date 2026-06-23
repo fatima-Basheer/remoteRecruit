@@ -96,11 +96,8 @@ function Showcase() {
           <h2 className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight mb-6 leading-tight">
             Showcase Your Talents
           </h2>
-          <p className="text-base text-gray-600 leading-relaxed max-w-[340px]">
-            RemoteRecruit connects candidates with opportunities around the
-            world. With today's remote first workforce, you need to be able to
-            find the best jobs and the best people for them, wherever they may
-            be.
+          <p className="text-base text-gray-600 leading-relaxed max-w-[360px]">
+          Personalize your profile with everything that makes you unique.Add an introductionary vedio and other media for a personal touch that stands out to employers and candidates.
           </p>
         </div>
 
